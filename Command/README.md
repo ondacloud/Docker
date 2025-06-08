@@ -16,6 +16,8 @@ docker images
 ```
 Docker image를 조회할 때 사용합니다.
 
+<br>
+
 **rmi**
 ```shell
 Docker rmi <docker image id or docker image name>
