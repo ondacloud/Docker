@@ -15,28 +15,28 @@
 ### Install Docker
 #### Amazon Linux2
 ```shell
-sudo yum install -y docker
-sudo systemctl enable --now docker
-sudo usermod -aG docker ec2-user
-sudo usermod -aG docker root
-sudo chmod 666 /var/run/docker.sock
+yum install -y docker
+systemctl enable --now docker
+usermod -aG docker ec2-user
+usermod -aG docker root
+chmod 666 /var/run/docker.sock
 ```
 
 #### Amazon Linux 2023
 ```shell
-sudo dnf install -y docker
-sudo systemctl enable --now docker
-sudo usermod -aG docker ec2-user
-sudo usermod -aG docker root
-sudo chmod 666 /var/run/docker.sock
+dnf install -y docker
+systemctl enable --now docker
+usermod -aG docker ec2-user
+usermod -aG docker root
+chmod 666 /var/run/docker.sock
 ```
 
 #### Ubuntu
 ```shell
-sudo apt install -y docker
-sudo systemctl enable --now docker
-sudo usermod -aG docker ubuntu
-sudo chmod 666 /var/run/docker.sock
+apt install -y docker
+systemctl enable --now docker
+usermod -aG docker ubuntu
+chmod 666 /var/run/docker.sock
 ```
 
 ---
