@@ -2,17 +2,13 @@ FROM golang:alpine
 
 WORKDIR /app
 
-ENV RDS_ENDPOINT=<ENDPOINT>
-ENV RDS_USERNAME=<User>
-ENV RDS_PASSWORD=<Password>
-ENV RDS_DATABASE=<DataBase>
+ENV ENDPOINT=<ENDPOINT>
+ENV USERNAME=<USER>
+ENV PASSWORD=<PASSWORD>
+ENV DATABASE=<DATABASE>
 
-COPY . .
-RUN apk add --no-cache curl
-RUN go mod init app
-RUN go get github.com/gin-gonic/gin
-RUN go get <Package>
-RUN go build -o app
-EXPOSE <Port>
+COPY ./main.go .
+RUN apk upgrade --no-cache && apk add --no-cache curl && go mod init noah.io/ark/rest && go get github.com/gin-gonic/gin && go build -o main main.go
+EXPOSE 8080
 
-CMD ["./app"]
+CMD ["./main"]
