@@ -1,10 +1,8 @@
 #!/bin/bash
-
-REGION_NAME="<REGION_NAME>"
+ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text)
+REGION_CODE="<REGION_CODE>"
 ECR_NAME="<ECR_NAME>"
 IMAGE_TAG="latest"
-ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text)
-REGION_CODE=$(aws configure set region $REGION_NAME && aws configure get region)
 
 docker rm -f $(docker ps -aq) 2> /dev/null
 docker rmi -f $(docker images -aq) 2> /dev/null

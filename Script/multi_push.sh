@@ -1,7 +1,7 @@
 #!/bin/bash
-REGION_NAME="<REGION_NAME>"
 ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text)
-REGION_CODE=$(aws configure set region $REGION_NAME && aws configure get region)
+REGION_CODE="<REGION_CODE>"
+ECR_NAME="<ECR_NAME>"
 IMAGE_NAME=("<IMAGE_NAME>")
 IMAGE_TAG
 for name in "${IMAGE_NAME[@]}"
