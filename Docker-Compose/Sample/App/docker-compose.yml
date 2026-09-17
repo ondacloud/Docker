@@ -1,0 +1,7 @@
+services:
+  app:
+    image: nginx:latest
+    container_name: sample-app
+    ports:
+      - "8080:80"
+    restart: unless-stopped
