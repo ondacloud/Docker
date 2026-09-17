@@ -6,5 +6,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
 COPY match /app/match
 RUN chown match:match /app/match && chmod +x /app/match
 USER match
-
-ENTRYPOINT ["/app/match"]
+CMD ["/app/match"]
